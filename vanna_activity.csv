@@ -1,0 +1,31 @@
+2026-01-05 00:38:57,sentence_transformers.SentenceTransformer,INFO,Use pytorch device_name: cpu
+2026-01-05 00:38:57,sentence_transformers.SentenceTransformer,INFO,Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 00:39:04,httpx,INFO,"HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl ""HTTP/1.1 200 OK"""
+2026-01-05 00:39:05,httpx,INFO,"HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation ""HTTP/1.1 200 OK"""
+2026-01-05 00:39:05,httpx,INFO,"HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql ""HTTP/1.1 200 OK"""
+2026-01-05 00:39:14,VannaAPI,INFO,NEW USER | User ID: 0c570c45-d65c-41d6-b3bc-caba1c85f6f7 | Email: ingit.paul.in@rupeek.com
+2026-01-05 00:39:34,VannaAPI,INFO,NEW QUESTION | User: ingit.paul.in@rupeek.com (0c570c45-d65c-41d6-b3bc-caba1c85f6f7) | Question: sib business  yesterday
+2026-01-05 00:39:35,httpx,INFO,"HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query ""HTTP/1.1 200 OK"""
+2026-01-05 00:39:36,httpx,INFO,"HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query ""HTTP/1.1 200 OK"""
+2026-01-05 00:39:36,httpx,INFO,"HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query ""HTTP/1.1 200 OK"""
+2026-01-05 00:39:45,VannaAPI,INFO,"SQL GENERATED | User: ingit.paul.in@rupeek.com | Request ID: 918fec4b-adb6-467f-ac85-46e74315da2d | Valid: True | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d..."
+2026-01-05 00:39:52,VannaAPI,INFO,EXECUTING SQL | User: ingit.paul.in@rupeek.com | Request ID: 918fec4b-adb6-467f-ac85-46e74315da2d
+2026-01-05 00:39:52,VannaAPI,INFO,SQL EXECUTED | User: ingit.paul.in@rupeek.com | Request ID: 918fec4b-adb6-467f-ac85-46e74315da2d | Rows: 1 | Columns: 1
+2026-01-05 00:39:56,VannaAPI,INFO,"TRAINING | User: ingit.paul.in@rupeek.com | Request ID: 918fec4b-adb6-467f-ac85-46e74315da2d | Question: sib business  yesterday | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d..."
+2026-01-05 00:39:57,httpx,INFO,"HTTP Request: PUT https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points?wait=true ""HTTP/1.1 200 OK"""
+2026-01-05 10:11:20,VannaAPI,INFO,NEW USER | User ID: 5c41af35-5cf5-474b-97f8-3b7e95f3d7b9 | Email: ingitpaul13@gmail.com
+2026-01-05 10:11:36,VannaAPI,INFO,NEW QUESTION | User: ingitpaul13@gmail.com (5c41af35-5cf5-474b-97f8-3b7e95f3d7b9) | Question: mip transactions
+2026-01-05 10:11:37,httpx,INFO,"HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query ""HTTP/1.1 200 OK"""
+2026-01-05 10:11:38,httpx,INFO,"HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query ""HTTP/1.1 200 OK"""
+2026-01-05 10:11:38,httpx,INFO,"HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query ""HTTP/1.1 200 OK"""
+2026-01-05 10:11:47,VannaAPI,INFO,"SQL GENERATED | User: ingitpaul13@gmail.com | Request ID: 0821b390-b9e6-41c1-aed9-b107a74b3671 | Valid: True | SQL: SELECT COUNT(gl_id)
+FROM bizfin.rpt_all_loan_tilldate
+WHERE appname ILIKE '%monthly%';..."
+2026-01-05 10:11:56,VannaAPI,INFO,EXECUTING SQL | User: ingitpaul13@gmail.com | Request ID: 0821b390-b9e6-41c1-aed9-b107a74b3671
+2026-01-05 10:12:38,VannaAPI,WARNING,NO RESULTS | Request ID: 0821b390-b9e6-41c1-aed9-b107a74b3671
+2026-01-05 10:12:38,VannaAPI,ERROR,EXECUTION ERROR | Request ID: 0821b390-b9e6-41c1-aed9-b107a74b3671 | Error: 400: Query returned no results or failed.
+2026-01-05 10:16:00,sentence_transformers.SentenceTransformer,INFO,Use pytorch device_name: cpu
+2026-01-05 10:16:00,sentence_transformers.SentenceTransformer,INFO,Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 10:16:09,httpx,INFO,"HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl ""HTTP/1.1 200 OK"""
+2026-01-05 10:16:10,httpx,INFO,"HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation ""HTTP/1.1 200 OK"""
+2026-01-05 10:16:10,httpx,INFO,"HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql ""HTTP/1.1 200 OK"""

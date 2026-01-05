@@ -1,0 +1,110 @@
+2026-01-04 23:42:24,772 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-04 23:42:24,773 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-04 23:42:31,286 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-04 23:42:31,657 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-04 23:42:31,857 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-04 23:43:41,407 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-04 23:43:41,409 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-04 23:43:48,808 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-04 23:43:49,115 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-04 23:43:49,422 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-04 23:58:04,437 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-04 23:58:04,438 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-04 23:58:11,000 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-04 23:58:11,235 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-04 23:58:11,466 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-05 00:00:33,043 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-05 00:00:33,044 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 00:00:40,071 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-05 00:00:40,290 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-05 00:00:40,505 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-05 00:02:46,931 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-05 00:02:46,934 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 00:02:53,552 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-05 00:02:53,759 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-05 00:02:53,962 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-05 00:06:06,773 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-05 00:06:06,774 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 00:06:13,583 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-05 00:06:13,806 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-05 00:06:14,022 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-05 00:07:24,970 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-05 00:07:24,971 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 00:07:31,027 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-05 00:07:31,245 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-05 00:07:31,455 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-05 00:09:29,354 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-05 00:09:29,355 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 00:09:36,685 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-05 00:09:36,894 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-05 00:09:37,096 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-05 00:09:52,608 - VannaAPI - INFO - NEW USER | User ID: 896148be-7bef-4677-ad15-2500fc6da4d6 | Email: ingit.paul.in@rupeek.com
+2026-01-05 00:10:02,035 - VannaAPI - INFO - NEW QUESTION | User: ingit.paul.in@rupeek.com (896148be-7bef-4677-ad15-2500fc6da4d6) | Question: sib busines yesterday
+2026-01-05 00:10:03,398 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:10:03,971 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:10:04,363 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:10:12,989 - VannaAPI - INFO - SQL GENERATED | User: ingit.paul.in@rupeek.com | Request ID: 8ffad9ce-4f28-4ff3-90b2-dbaed961a6d3 | Valid: True | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d...
+2026-01-05 00:10:22,798 - VannaAPI - INFO - EXECUTING SQL | User: ingit.paul.in@rupeek.com | Request ID: 8ffad9ce-4f28-4ff3-90b2-dbaed961a6d3
+2026-01-05 00:10:23,509 - VannaAPI - INFO - SQL EXECUTED | User: ingit.paul.in@rupeek.com | Request ID: 8ffad9ce-4f28-4ff3-90b2-dbaed961a6d3 | Rows: 1 | Columns: 1
+2026-01-05 00:11:57,375 - VannaAPI - INFO - LOGIN | User ID: 896148be-7bef-4677-ad15-2500fc6da4d6 | Email: ingit.paul.in@rupeek.com
+2026-01-05 00:26:37,178 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-05 00:26:37,179 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 00:26:47,009 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-05 00:26:47,315 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-05 00:26:47,622 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-05 00:26:58,733 - VannaAPI - INFO - NEW USER | User ID: abaca7c6-c3a3-4be3-970f-4e04f691522b | Email: ingit.paul.in@rupeek.com
+2026-01-05 00:27:12,349 - VannaAPI - INFO - NEW QUESTION | User: ingit.paul.in@rupeek.com (abaca7c6-c3a3-4be3-970f-4e04f691522b) | Question: sib busines syesterday
+2026-01-05 00:27:13,945 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:27:14,657 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:27:15,379 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:27:25,204 - VannaAPI - INFO - SQL GENERATED | User: ingit.paul.in@rupeek.com | Request ID: 77fb9e38-2043-49ad-87d1-8c1a9488ad47 | Valid: True | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d...
+2026-01-05 00:27:27,567 - VannaAPI - INFO - EXECUTING SQL | User: ingit.paul.in@rupeek.com | Request ID: 77fb9e38-2043-49ad-87d1-8c1a9488ad47
+2026-01-05 00:27:28,091 - VannaAPI - INFO - SQL EXECUTED | User: ingit.paul.in@rupeek.com | Request ID: 77fb9e38-2043-49ad-87d1-8c1a9488ad47 | Rows: 1 | Columns: 1
+2026-01-05 00:27:45,082 - VannaAPI - INFO - NEW QUESTION | User: ingit.paul.in@rupeek.com (abaca7c6-c3a3-4be3-970f-4e04f691522b) | Question: can you tell me of  the 1st month of decmeber also?
+2026-01-05 00:27:46,605 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:27:47,631 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:27:48,653 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:28:00,222 - VannaAPI - INFO - SQL GENERATED | User: ingit.paul.in@rupeek.com | Request ID: 7740f1d4-904a-4e47-ac0c-886b89574f33 | Valid: True | SQL: SELECT count(gl_id) ,sum(total)/10^7 as total
+FROM bizfin.rpt_all_loan_tilldate
+WHERE secured_lender...
+2026-01-05 00:28:10,403 - VannaAPI - INFO - EXECUTING SQL | User: ingit.paul.in@rupeek.com | Request ID: 7740f1d4-904a-4e47-ac0c-886b89574f33
+2026-01-05 00:28:16,297 - VannaAPI - INFO - SQL EXECUTED | User: ingit.paul.in@rupeek.com | Request ID: 7740f1d4-904a-4e47-ac0c-886b89574f33 | Rows: 1 | Columns: 2
+2026-01-05 00:29:07,862 - VannaAPI - INFO - NEW QUESTION | User: ingit.paul.in@rupeek.com (abaca7c6-c3a3-4be3-970f-4e04f691522b) | Question: sib  business  yesterday
+2026-01-05 00:29:09,145 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:29:09,754 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:29:10,317 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:29:19,316 - VannaAPI - INFO - SQL GENERATED | User: ingit.paul.in@rupeek.com | Request ID: 4694803e-2db2-4cfa-b5d5-746c4a0c097d | Valid: True | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE coalesce(dop, dot) = CURRENT_DATE - INTERV...
+2026-01-05 00:29:28,638 - VannaAPI - INFO - EXECUTING SQL | User: ingit.paul.in@rupeek.com | Request ID: 4694803e-2db2-4cfa-b5d5-746c4a0c097d
+2026-01-05 00:29:29,225 - VannaAPI - INFO - SQL EXECUTED | User: ingit.paul.in@rupeek.com | Request ID: 4694803e-2db2-4cfa-b5d5-746c4a0c097d | Rows: 1 | Columns: 1
+2026-01-05 00:31:59,210 - VannaAPI - INFO - LOGIN | User ID: abaca7c6-c3a3-4be3-970f-4e04f691522b | Email: ingit.paul.in@rupeek.com
+2026-01-05 00:38:57,796 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-05 00:38:57,796 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 00:39:04,915 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-05 00:39:05,222 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-05 00:39:05,528 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-05 00:39:14,297 - VannaAPI - INFO - NEW USER | User ID: 0c570c45-d65c-41d6-b3bc-caba1c85f6f7 | Email: ingit.paul.in@rupeek.com
+2026-01-05 00:39:34,144 - VannaAPI - INFO - NEW QUESTION | User: ingit.paul.in@rupeek.com (0c570c45-d65c-41d6-b3bc-caba1c85f6f7) | Question: sib business  yesterday
+2026-01-05 00:39:35,707 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:39:36,288 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:39:36,700 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query "HTTP/1.1 200 OK"
+2026-01-05 00:39:45,979 - VannaAPI - INFO - SQL GENERATED | User: ingit.paul.in@rupeek.com | Request ID: 918fec4b-adb6-467f-ac85-46e74315da2d | Valid: True | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d...
+2026-01-05 00:39:52,057 - VannaAPI - INFO - EXECUTING SQL | User: ingit.paul.in@rupeek.com | Request ID: 918fec4b-adb6-467f-ac85-46e74315da2d
+2026-01-05 00:39:52,582 - VannaAPI - INFO - SQL EXECUTED | User: ingit.paul.in@rupeek.com | Request ID: 918fec4b-adb6-467f-ac85-46e74315da2d | Rows: 1 | Columns: 1
+2026-01-05 00:39:56,191 - VannaAPI - INFO - TRAINING | User: ingit.paul.in@rupeek.com | Request ID: 918fec4b-adb6-467f-ac85-46e74315da2d | Question: sib business  yesterday | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d...
+2026-01-05 00:39:57,997 - httpx - INFO - HTTP Request: PUT https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points?wait=true "HTTP/1.1 200 OK"
+2026-01-05 10:11:20,164 - VannaAPI - INFO - NEW USER | User ID: 5c41af35-5cf5-474b-97f8-3b7e95f3d7b9 | Email: ingitpaul13@gmail.com
+2026-01-05 10:11:36,505 - VannaAPI - INFO - NEW QUESTION | User: ingitpaul13@gmail.com (5c41af35-5cf5-474b-97f8-3b7e95f3d7b9) | Question: mip transactions
+2026-01-05 10:11:37,634 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query "HTTP/1.1 200 OK"
+2026-01-05 10:11:38,066 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query "HTTP/1.1 200 OK"
+2026-01-05 10:11:38,358 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query "HTTP/1.1 200 OK"
+2026-01-05 10:11:47,012 - VannaAPI - INFO - SQL GENERATED | User: ingitpaul13@gmail.com | Request ID: 0821b390-b9e6-41c1-aed9-b107a74b3671 | Valid: True | SQL: SELECT COUNT(gl_id)
+FROM bizfin.rpt_all_loan_tilldate
+WHERE appname ILIKE '%monthly%';...
+2026-01-05 10:11:56,049 - VannaAPI - INFO - EXECUTING SQL | User: ingitpaul13@gmail.com | Request ID: 0821b390-b9e6-41c1-aed9-b107a74b3671
+2026-01-05 10:12:38,350 - VannaAPI - WARNING - NO RESULTS | Request ID: 0821b390-b9e6-41c1-aed9-b107a74b3671
+2026-01-05 10:12:38,350 - VannaAPI - ERROR - EXECUTION ERROR | Request ID: 0821b390-b9e6-41c1-aed9-b107a74b3671 | Error: 400: Query returned no results or failed.
+2026-01-05 10:16:00,600 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-05 10:16:00,601 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 10:16:09,927 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-05 10:16:10,150 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-05 10:16:10,360 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"

@@ -1,0 +1,5 @@
+#environments
+.env
+__pycache__/
+*.pyc
+master_env_GG.envcls

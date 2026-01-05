@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanna AI Explorer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --sidebar-bg: #020617;
+            --main-bg: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #3b82f6;
+            --success: #10b981;
+            --border: #334155;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--main-bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- SIDEBAR --- */
+        aside {
+            width: 260px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem 1rem;
+            flex-shrink: 0;
+        }
+
+        .sidebar-title {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .new-chat-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: opacity 0.2s;
+        }
+
+        .new-chat-btn:hover {
+            opacity: 0.9;
+        }
+
+        #history-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            padding: 10px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 4px;
+        }
+
+        .history-item:hover {
+            background: var(--card-bg);
+            color: white;
+        }
+
+        /* --- MAIN LAYOUT --- */
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* NEW HEADER FOR LOGO */
+        header {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            /* Pushes logo to the right */
+            padding: 0 2rem;
+            background: transparent;
+            z-index: 100;
+        }
+
+        .rupeek-logo {
+            height: 45px;
+            /* Adjust size to match your preference */
+            width: auto;
+            border-radius: 8px;
+            background: white;
+            /* Optional: adds white background like in your screenshot */
+            padding: 5px 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 2rem 2rem 2rem;
+            scroll-behavior: smooth;
+        }
+
+        /* --- BUBBLES --- */
+        .bubble {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            border: 1px solid var(--border);
+            line-height: 1.6;
+        }
+
+        .sql-code {
+            background: #000;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #10b981;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* --- DATA TABLE --- */
+        .data-hero-section {
+            margin-top: 1rem;
+            background: #020617;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .table-meta {
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            max-height: 400px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        th {
+            background: #1e293b;
+            padding: 12px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            color: white;
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #cbd5e1;
+        }
+
+        /* --- INPUT --- */
+        .input-outer {
+            padding: 1rem 2rem 2rem 2rem;
+        }
+
+        .input-box {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 16px 110px 16px 20px;
+            border-radius: 12px;
+            background: #1e293b;
+            border: 1px solid var(--border);
+            color: white;
+            outline: none;
+        }
+
+        .send-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            border: none;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .run-query-btn {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside>
+        <div class="sidebar-title">ASK Rupeek Explorer AI</div>
+        <button class="new-chat-btn" onclick="location.reload()">+ New Analysis</button>
+        <div class="sidebar-title">HISTORY</div>
+        <div id="history-list"></div>
+    </aside>
+
+    <div class="main-container">
+        <header>
+            <img src="/static/logo.png" alt="Rupeek Logo" class="rupeek-logo">
+        </header>
+
+        <main id="chat-stream">
+            <div class="bubble">
+                <h2 style="margin-top: 0; font-size: 1.2rem;">👋 Welcome to Rupeek Explorer AI!</h2>
+                Explore your business data and get answers you can trust.
+            </div>
+        </main>
+
+        <div class="input-outer">
+            <div class="input-box">
+                <input type="text" id="user-input" placeholder="Ask a question..."
+                    onkeypress="if(event.key==='Enter') sendMessage()">
+                <button class="send-btn" onclick="sendMessage()">Run</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatStream = document.getElementById('chat-stream');
+        const historyList = document.getElementById('history-list');
+
+        async function sendMessage() {
+            const input = document.getElementById('user-input');
+            const query = input.value.trim();
+            if (!query) return;
+
+            const histItem = document.createElement('div');
+            histItem.className = 'history-item';
+            histItem.textContent = query;
+            historyList.prepend(histItem);
+
+            input.value = '';
+
+            const loadingBubble = document.createElement('div');
+            loadingBubble.className = 'bubble';
+            loadingBubble.innerHTML = `<div style="color: var(--text-dim)">Analyzing: <b>"${query}"</b>...</div>`;
+            chatStream.appendChild(loadingBubble);
+            chatStream.scrollTop = chatStream.scrollHeight;
+
+            try {
+                const res = await fetch('/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: query })
+                });
+                const data = await res.json();
+
+                // Format explanation with line breaks
+                const formattedExplanation = data.explanation
+                    ? data.explanation.replace(/\n/g, '<br>')
+                    : 'SQL Generated.';
+
+                loadingBubble.innerHTML = `
+                    <div style="font-weight: 600; color: var(--primary); margin-bottom: 8px;">Analysis</div>
+                    <div style="margin-bottom: 1rem; line-height: 1.8; white-space: pre-wrap;">${formattedExplanation}</div>
+                    <div class="sql-code">${data.sql}</div>
+                    <button id="run-${data.request_id}" class="run-query-btn" onclick="runSql('${data.request_id}', '${btoa(data.sql)}')">▶ Run This Query</button>
+                `;
+            } catch (err) {
+                loadingBubble.innerHTML = `<span style="color: #ef4444;">Error connecting to backend.</span>`;
+            }
+            chatStream.scrollTop = chatStream.scrollHeight;
+        }
+
+        async function runSql(requestId, sqlB64) {
+            const btn = document.getElementById(`run-${requestId}`);
+            btn.innerHTML = "Running...";
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/run_sql', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ request_id: requestId, sql: atob(sqlB64) })
+                });
+                const data = await res.json();
+
+                const tableDiv = document.createElement('div');
+                tableDiv.className = 'data-hero-section';
+                tableDiv.innerHTML = `
+                    <div class="table-meta">
+                        <span>Results</span>
+                        <span>${data.data.length} Rows</span>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead><tr>${data.columns.map(c => `<th>${c}</th>`).join('')}</tr></thead>
+                            <tbody>
+                                ${data.data.map(row => `<tr>${data.columns.map(c => `<td>${row[c] ?? '-'}</td>`).join('')}</tr>`).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                btn.parentElement.appendChild(tableDiv);
+                btn.remove();
+
+                // Add feedback buttons
+                const feedbackDiv = document.createElement('div');
+                feedbackDiv.id = `feedback-${requestId}`;
+                feedbackDiv.style.marginTop = '1rem';
+                feedbackDiv.innerHTML = `
+                    <button class="run-query-btn" style="background: var(--success);" onclick="markCorrect('${requestId}', this)">✓ Correct - Add to Training</button>
+                    <button class="run-query-btn" style="background: var(--border); margin-left: 10px;" onclick="editSQL('${requestId}', '${sqlB64}', this)">✎ Edit SQL</button>
+                `;
+                tableDiv.parentElement.appendChild(feedbackDiv);
+
+            } catch (err) {
+                btn.innerHTML = "Error Running";
+            }
+            chatStream.scrollTop = chatStream.scrollHeight;
+        }
+
+        async function markCorrect(requestId, btn) {
+            btn.innerHTML = "Training...";
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/feedback', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        request_id: requestId,
+                        is_correct: true
+                    })
+                });
+                const data = await res.json();
+
+                // Show success message
+                const feedbackDiv = document.getElementById(`feedback-${requestId}`);
+                feedbackDiv.innerHTML = `<div style="color: var(--success); font-size: 0.9rem;">✓ ${data.message}</div>`;
+
+            } catch (err) {
+                btn.innerHTML = "Error";
+                alert(err.message);
+            }
+        }
+
+        async function editSQL(requestId, sqlB64, btn) {
+            const currentSQL = atob(sqlB64);
+            const userSQL = prompt("Edit the SQL query:", currentSQL);
+
+            if (!userSQL || userSQL.trim() === currentSQL.trim()) return;
+
+            btn.innerHTML = "Updating...";
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/feedback', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        request_id: requestId,
+                        is_correct: false,
+                        edited_sql: userSQL
+                    })
+                });
+                const data = await res.json();
+
+                // Replace feedback buttons with updated SQL and re-run button
+                const feedbackDiv = document.getElementById(`feedback-${requestId}`);
+                feedbackDiv.innerHTML = `
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 8px; border-left: 4px solid var(--primary);">
+                        <div style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.5rem;">Updated SQL:</div>
+                        <div class="sql-code">${userSQL}</div>
+                        <button class="run-query-btn" onclick="runSql('${requestId}', '${btoa(userSQL)}')">▶ Run Updated Query</button>
+                    </div>
+                `;
+                chatStream.scrollTop = chatStream.scrollHeight;
+
+            } catch (err) {
+                btn.innerHTML = "Error";
+                alert(err.message);
+            }
+        }
+    </script>
+</body>
+
+</html>

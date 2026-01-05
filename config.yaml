@@ -1,0 +1,23 @@
+# --- Qdrant Vector Store Settings ---
+qdrant_host: localhost
+qdrant_port: 6333
+qdrant_collection: vanna_collection
+vector_dim: 1024
+distance: Cosine       # or 'Dot', 'Euclid'
+
+# --- Embedder Settings ---
+embedder_model: intfloat/e5-large-v2  
+device: cpu                           
+
+# --- Gemini LLM Settings ---
+gemini_model: gemini-2.5-flash      # gemini-2.5-pro # gemini-2.5-flash
+temperature: 0.5                    
+max_output_tokens: 30000  
+top_k: 10          
+
+
+# --- Orchestration Settings ---
+allow_llm_to_see_data: True
+
+qdrant_url: https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io
+qdrant_api_key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.hIR8S3da5JCypsIOAIlIuYg6W_-5OY2XZ-jQt9aZsRs
