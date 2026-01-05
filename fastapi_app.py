@@ -11,13 +11,10 @@ import logging
 import json
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
-
 from dotenv import load_dotenv
 from src.vanna_sql import MyVanna
 from src.config import load_config
-
 from cachetools import TTLCache
-
 # --- Configure Logging ---
 class CSVFormatter(logging.Formatter):
     def __init__(self):
@@ -101,7 +98,6 @@ async def lifespan(app: FastAPI):
 
 import uuid
 
-# --- 4. Define API Schemas (Pydantic) ---
 
 class LoginRequest(BaseModel):
     email: str = Field(..., description="Company email address")
@@ -148,7 +144,7 @@ class FeedbackResponse(BaseModel):
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 
-# --- 5. Create FastAPI App ---
+#fastapi app
 app = FastAPI(
     title="Vanna Text-to-SQL API",
     description="A typed REST API for generating and running SQL queries using Vanna + Gemini + Qdrant.",
@@ -156,7 +152,6 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS (important if you build a custom UI later)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], 
@@ -168,7 +163,7 @@ app.add_middleware(
 
 REQUEST_CACHE = TTLCache(maxsize=500, ttl=3600)
 
-# Mount Static Files 
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/", response_class=HTMLResponse)
@@ -182,7 +177,7 @@ async def read_root():
         headers={"Content-Type": "text/html; charset=utf-8"}
     )
 
-# --- 6. Endpoints ---
+
 
 # Auth Helper Functions
 def create_access_token(data: dict):
@@ -213,11 +208,11 @@ def login(request: LoginRequest):
     Demo login: Password is always '123'
     Creates new user if email doesn't exist
     """
-    # Check password
+    
     if request.password != DEMO_PASSWORD:
         raise HTTPException(status_code=401, detail="Invalid password. Demo password is '123'")
     
-    # Check if user exists
+    
     if request.email in USER_STORE:
         user_id = USER_STORE[request.email]
         message = "Welcome back!"
@@ -244,21 +239,20 @@ def generate_sql_explanation(question: str, sql: str) -> str:
     Generate a human-readable explanation of why this SQL was generated.
     Explains table/column selection and the reasoning behind it.
     """
-    prompt = f"""You are a data analyst explaining your SQL query reasoning to a business user.
+    prompt = f"""You are an AI Data Analyst. Your goal is to explain your thought process and reasoning for the generated SQL, as if you are walking the user through how you understood their specific question and context.
 
-Question asked: "{question}"
+User's Question: "{question}"
 
-SQL generated:
+Generated SQL:
 {sql}
 
-Please provide a clear, point-wise explanation covering:
-1. What the user was asking for
-2. Which tables were selected and why
-3. Which columns were used and their purpose
-4. Any filters/conditions applied and why
-5. The overall logic of the query
+Please provide a "Thought Process" explanation that covers:
+1. **Interpretation**: How you interpreted the user's intent and any specific terms in their question.
+2. **Context & Reasoning**: Why you selected these specific tables and columns. How does this answer the business question?
+3. **Logic Path**: Briefly explain the logical steps (filtering, aggregating, joining) you took to derive the answer.
+4. **Follow-up Potential**: Mention if there are any nuances or related data points the user might find interesting based on this query.
 
-Format your response as numbered points, be concise and professional."""
+Your tone should be conversational, helpful, and insightful—like a senior analyst explaining their work to a stakeholder. DO NOT just describe the SQL syntax (e.g., "I used a SELECT statement"); explain the *why* and the *how* of the solution."""
 
     try:
         explanation = vn.submit_prompt(prompt)
@@ -286,7 +280,6 @@ def ask_question(request: AskRequest, current_user: dict = Depends(get_current_u
             question=request.question,
             allow_llm_to_see_data=request.allow_llm_to_see_data
         )
-        
         # 2. Validate
         valid = vn.is_sql_valid(sql)
 

@@ -1,139 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanna AI - Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Rupeek Explorer AI - Secure Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f172a;
-            --card: #1e293b;
-            --primary: #3b82f6;
-            --text: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: #334155;
+            --primary-gold: #FFD700;
+            --accent-blue: #3b82f6;
+            --bg-dark: #05070a;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                linear-gradient(rgba(5, 7, 10, 0.8), rgba(5, 7, 10, 0.8)),
+                url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end; 
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
 
-        .login-card {
-            background: var(--card);
-            padding: 2.5rem;
-            border-radius: 16px;
+        .top-left-logo {
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            z-index: 10;
+        }
+
+        .top-left-logo img {
+            height: 45px;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.5));
+        }
+
+        .login-container {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
             width: 100%;
-            max-width: 400px;
-            border: 1px solid var(--border);
+            max-width: 450px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 3.5rem;
+            border-left: 1px solid var(--border-glass);
+            box-shadow: -20px 0 50px rgba(0,0,0,0.5);
+            box-sizing: border-box;
         }
 
         h1 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1.75rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, var(--primary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
         }
 
         label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         input {
             width: 100%;
-            padding: 12px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text);
-            margin-bottom: 1.5rem;
+            padding: 14px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: white;
             font-size: 1rem;
             box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         input:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: var(--accent-blue);
+            background: #222;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
         }
 
         button {
             width: 100%;
-            padding: 12px;
-            background: var(--primary);
+            padding: 16px;
+            background: var(--accent-blue);
             border: none;
-            border-radius: 8px;
+            border-radius: 4px;
             color: white;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s;
         }
 
         button:hover {
-            opacity: 0.9;
+            background: #2563eb;
+            transform: translateY(-2px);
         }
 
-        .error {
-            background: rgba(239, 68, 68, 0.1);
-            color: #ef4444;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .hint {
-            margin-top: 1rem;
-            padding: 12px;
-            background: rgba(59, 130, 246, 0.1);
-            border-left: 3px solid var(--primary);
-            font-size: 0.85rem;
-            color: var(--text-dim);
+        .gold-tag {
+            color: var(--primary-gold);
+            font-weight: 600;
         }
     </style>
 </head>
-
 <body>
-    <div class="login-card">
-        <h1>Rupeek Explorer AI</h1>
-        <div class="subtitle">Enter your company email to continue</div>
 
-        <div id="error" class="error" style="display:none;"></div>
+    <div class="top-left-logo">
+        <img src="/static/logo.png" alt="Rupeek Logo">
+    </div>
+
+    <div class="login-container">
+        <h1>Sign up</h1>
+        <div class="subtitle">
+            Welcome to the <span class="gold-tag">Rupeek Explorer AI</span>. <br>
+            Access to Rupeek Company Data
+        </div>
+
+        <div id="error" style="display:none; color: #ef4444; margin-bottom: 1rem; font-size: 0.9rem;"></div>
 
         <form onsubmit="login(event)">
-            <label>Company Email</label>
-            <input type="email" id="email" placeholder="you@rupeek.com" required>
+            <div class="input-group">
+                <label>Company Email</label>
+                <input type="email" id="email" placeholder="company.email@rupeek.com" required>
+            </div>
 
-            <label>Password</label>
-            <input type="password" id="password" placeholder="Enter password" >
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="••••••••••••" required>
+            </div>
 
-            <button type="submit">Login</button>
+            <div class="terms">
+                <input type="checkbox" id="agree" required style="width: auto; margin-bottom: 0;">
+                <span>I agree to the terms of service</span>
+            </div>
+
+            <button type="submit">LOGIN</button>
         </form>
-
-        
     </div>
 
     <script>
         async function login(e) {
             e.preventDefault();
-
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const errorDiv = document.getElementById('error');
+            
+            errorDiv.style.display = 'none';
 
             try {
                 const res = await fetch('/login', {
@@ -141,7 +189,7 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password })
                 });
-
+                
                 const data = await res.json();
 
                 if (!res.ok) {
@@ -150,12 +198,13 @@
                     return;
                 }
 
-                // Save token and user info
+                // 1. Save the token for API authentication
                 localStorage.setItem('access_token', data.access_token);
-                localStorage.setItem('user_email', data.email);
-                localStorage.setItem('user_id', data.user_id);
+                
+                // 2. Save the email to display in the Chat Dashboard
+                localStorage.setItem('user_email', email);
 
-                // Redirect to main app
+                // 3. Redirect to the dynamic chat page
                 window.location.href = '/static/app.html';
 
             } catch (err) {
@@ -165,5 +214,4 @@
         }
     </script>
 </body>
-
 </html>
