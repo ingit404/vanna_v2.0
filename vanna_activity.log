@@ -256,3 +256,37 @@ WHERE appname ILIKE '%monthly%';...
 2026-01-05 13:22:45,381 - VannaAPI - INFO - SQL GENERATED | User: ram@rupeek.com | Request ID: de8f035f-60c0-4fdf-9fe1-7ec8fd2c983e | Valid: True | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d...
 2026-01-05 13:22:45,395 - VannaAPI - INFO - EXECUTING SQL | User: ram@rupeek.com | Request ID: de8f035f-60c0-4fdf-9fe1-7ec8fd2c983e
 2026-01-05 13:22:45,922 - VannaAPI - INFO - SQL EXECUTED | User: ram@rupeek.com | Request ID: de8f035f-60c0-4fdf-9fe1-7ec8fd2c983e | Rows: 1 | Columns: 1
+2026-01-05 13:25:26,889 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2026-01-05 13:25:26,891 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: intfloat/e5-large-v2
+2026-01-05 13:25:34,891 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl "HTTP/1.1 200 OK"
+2026-01-05 13:25:35,134 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation "HTTP/1.1 200 OK"
+2026-01-05 13:25:35,433 - httpx - INFO - HTTP Request: GET https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql "HTTP/1.1 200 OK"
+2026-01-05 13:25:59,964 - VannaAPI - INFO - NEW USER | User ID: 8edfba66-a7f7-4005-8d25-d1207371a709 | Email: bharath.shanker@rupeek.com
+2026-01-05 13:30:31,961 - VannaAPI - INFO - NEW USER | User ID: 1b387d7c-db1f-48d5-a16d-dbcfe4a28fa6 | Email: ingitpaul13@gmail.com
+2026-01-05 13:30:43,393 - VannaAPI - INFO - NEW QUESTION | User: ingitpaul13@gmail.com (1b387d7c-db1f-48d5-a16d-dbcfe4a28fa6) | Question: sib business yesterday
+2026-01-05 13:30:44,810 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query "HTTP/1.1 200 OK"
+2026-01-05 13:30:45,345 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query "HTTP/1.1 200 OK"
+2026-01-05 13:30:45,951 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query "HTTP/1.1 200 OK"
+2026-01-05 13:31:03,670 - VannaAPI - INFO - SQL GENERATED | User: ingitpaul13@gmail.com | Request ID: c74e7789-a20a-4c8e-9928-34872b7003af | Valid: True | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d...
+2026-01-05 13:31:03,718 - VannaAPI - INFO - EXECUTING SQL | User: ingitpaul13@gmail.com | Request ID: c74e7789-a20a-4c8e-9928-34872b7003af
+2026-01-05 13:31:05,023 - VannaAPI - INFO - SQL EXECUTED | User: ingitpaul13@gmail.com | Request ID: c74e7789-a20a-4c8e-9928-34872b7003af | Rows: 1 | Columns: 1
+2026-01-05 13:40:29,260 - VannaAPI - INFO - NEW USER | User ID: 0232dce6-07ab-4619-a52b-e170d3cb8088 | Email: ingit.paul.in@rupeek.com
+2026-01-05 13:41:36,766 - VannaAPI - INFO - LOGIN | User ID: 0232dce6-07ab-4619-a52b-e170d3cb8088 | Email: ingit.paul.in@rupeek.com
+2026-01-05 13:41:59,814 - VannaAPI - INFO - NEW QUESTION | User: ingit.paul.in@rupeek.com (0232dce6-07ab-4619-a52b-e170d3cb8088) | Question: sib business yesterday?
+2026-01-05 13:42:00,966 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query "HTTP/1.1 200 OK"
+2026-01-05 13:42:01,590 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query "HTTP/1.1 200 OK"
+2026-01-05 13:42:02,215 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query "HTTP/1.1 200 OK"
+2026-01-05 13:42:18,449 - VannaAPI - INFO - SQL GENERATED | User: ingit.paul.in@rupeek.com | Request ID: db959a4c-9d6b-48bc-99b2-e79e5748dd02 | Valid: True | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d...
+2026-01-05 13:42:18,482 - VannaAPI - INFO - EXECUTING SQL | User: ingit.paul.in@rupeek.com | Request ID: db959a4c-9d6b-48bc-99b2-e79e5748dd02
+2026-01-05 13:42:18,976 - VannaAPI - INFO - SQL EXECUTED | User: ingit.paul.in@rupeek.com | Request ID: db959a4c-9d6b-48bc-99b2-e79e5748dd02 | Rows: 1 | Columns: 1
+2026-01-05 13:42:22,841 - VannaAPI - INFO - TRAINING | User: ingit.paul.in@rupeek.com | Request ID: db959a4c-9d6b-48bc-99b2-e79e5748dd02 | Question: sib business yesterday? | SQL: SELECT SUM(total) FROM bizfin.rpt_all_loan_tilldate WHERE secured_lender = 'SIB' AND coalesce(dop, d...
+2026-01-05 13:42:24,559 - httpx - INFO - HTTP Request: PUT https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points?wait=true "HTTP/1.1 200 OK"
+2026-01-05 13:44:03,466 - VannaAPI - INFO - NEW QUESTION | User: ingit.paul.in@rupeek.com (0232dce6-07ab-4619-a52b-e170d3cb8088) | Question: what is the average revenue for the December month?
+2026-01-05 13:44:04,684 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/sql/points/query "HTTP/1.1 200 OK"
+2026-01-05 13:44:05,371 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/ddl/points/query "HTTP/1.1 200 OK"
+2026-01-05 13:44:06,118 - httpx - INFO - HTTP Request: POST https://57085b60-dde8-412d-8609-b5671960eeb3.europe-west3-0.gcp.cloud.qdrant.io:6333/collections/documentation/points/query "HTTP/1.1 200 OK"
+2026-01-05 13:44:31,110 - VannaAPI - INFO - SQL GENERATED | User: ingit.paul.in@rupeek.com | Request ID: f6474ab7-6947-482e-9edd-9b12b842a033 | Valid: True | SQL: SELECT AVG(total)
+FROM bizfin.rpt_all_loan_tilldate
+WHERE coalesce(dop, dot) BETWEEN '2025-12-01' AN...
+2026-01-05 13:44:31,126 - VannaAPI - INFO - EXECUTING SQL | User: ingit.paul.in@rupeek.com | Request ID: f6474ab7-6947-482e-9edd-9b12b842a033
+2026-01-05 13:44:35,580 - VannaAPI - INFO - SQL EXECUTED | User: ingit.paul.in@rupeek.com | Request ID: f6474ab7-6947-482e-9edd-9b12b842a033 | Rows: 1 | Columns: 1

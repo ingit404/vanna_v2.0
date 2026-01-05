@@ -388,7 +388,7 @@ def submit_feedback(request: FeedbackRequest, current_user: dict = Depends(get_c
             # User confirmed result is correct → train Vanna
             logger.info(f"TRAINING | User: {current_user['email']} | Request ID: {request.request_id} | Question: {context['question']} | SQL: {context['sql'][:100]}...")
             
-            vn.add_question_sql(
+            vn.train(
                 question=context["question"],
                 sql=context["sql"]
             )
@@ -403,7 +403,7 @@ def submit_feedback(request: FeedbackRequest, current_user: dict = Depends(get_c
                 
                 # User provided corrected SQL → update cache
                 context["sql"] = request.edited_sql
-                context["df"] = None  # Reset df so they can re-run
+                context["df"] = None 
                 context["edited"] = True
                 context["edit_time"] = datetime.now().isoformat()
                 REQUEST_CACHE[request.request_id] = context

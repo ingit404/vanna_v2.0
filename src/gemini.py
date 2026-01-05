@@ -36,7 +36,7 @@ class GeminiLLM:
             gen_kwargs["temperature"] = kwargs.get("temperature", self.default_llm_kwargs["temperature"])
             gen_kwargs["max_output_tokens"] = kwargs.get("max_output_tokens", self.default_llm_kwargs["max_output_tokens"])
 
-            # Build GenerationConfig (assumes genai.types.GenerationConfig is available)
+            # Build GenerationConfig 
             generation_config = genai.types.GenerationConfig(
                 temperature=gen_kwargs["temperature"],
                 max_output_tokens=gen_kwargs["max_output_tokens"],
@@ -50,16 +50,15 @@ class GeminiLLM:
             
             text_out = ""
 
-            # 1) Try resp.text but guard against the SDK's ValueError (raised when no text part exists)
+            
             try:
                 maybe_text = getattr(resp, "text", None)
                 if maybe_text:
                     text_out = maybe_text
             except ValueError:
-                # resp.text accessor raised because there were no Parts — ignore and fallback
-                maybe_text = None
+                 maybe_text = None
 
-            # 2) Fallback: iterate candidates safely (if any)
+            
             if not text_out:
                 try:
                     candidates = getattr(resp, "candidates", None) or []
@@ -72,30 +71,22 @@ class GeminiLLM:
                             for part in content.parts:
                                 text_out += getattr(part, "text", "") or getattr(part, "plain_text", "") or ""
                         else:
-                            # content might be a plain string or have .text directly
                             if isinstance(content, (str,)):
                                 text_out += content
                             else:
                                 text_out += getattr(content, "text", "") or ""
-
-                        # Sometimes candidate itself has a text field
                         text_out += getattr(cand, "text", "") or ""
 
                 except Exception:
-                    # Be robust: if anything unexpected in structure, continue to final fallback
                     pass
-
-            # 3) Final fallback: try a string form of resp (safe)
             if not text_out:
                 try:
                     text_out = str(resp) if resp is not None else ""
                 except Exception:
                     text_out = ""
-
-            # 4) If still empty, return helpful debug info (include finish_reason if present)
             if not text_out:
                 finish_reason = None
-                # finish_reason might be on candidate(s)
+                # finish_reason might be on candidate
                 try:
                     if getattr(resp, "candidates", None):
                         finish_reason = getattr(resp.candidates[0], "finish_reason", None)
@@ -109,7 +100,7 @@ class GeminiLLM:
             return text_out
 
         except Exception as e:
-            # Return the error string so your caller doesn't crash
+            # Returning the error string so your caller doesn't crash
             return f"Error during generation: {e}"
         
     def  system_message(self, message: str) -> str:

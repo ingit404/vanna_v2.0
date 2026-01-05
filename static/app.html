@@ -309,6 +309,53 @@
             font-size: 0.85rem;
             text-align: center;
         }
+
+        /* --- FEEDBACK UI --- */
+        .feedback-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-glass);
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .btn-feedback {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-feedback:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .btn-feedback.correct:hover {
+            border-color: #4ade80;
+            color: #4ade80;
+        }
+
+        .btn-feedback.incorrect:hover {
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        .feedback-status {
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: none;
+        }
     </style>
 </head>
 
@@ -336,14 +383,16 @@
         <div id="conversation-container">
             <div class="welcome-box" id="welcome-box">
                 <h1 id="welcome-message">👋 Hey! Welcome to Rupeek Explorer AI</h1>
-                <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Explore your business data and get answers you can trust.</p>
+                <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">Explore your business data and get answers you
+                    can trust.</p>
             </div>
         </div>
 
         <div class="chat-wrapper">
             <div id="loading" class="loading-dots" style="display: none;">Generating Response...</div>
             <div class="input-container">
-                <input type="text" class="chat-input" id="chat-input" placeholder="Ask a question about our business data.">
+                <input type="text" class="chat-input" id="chat-input"
+                    placeholder="Ask a question about our business data.">
                 <button class="btn-run" onclick="handleRun()">Run</button>
             </div>
         </div>
@@ -401,7 +450,7 @@
             userBubble.id = interactionId;
             userBubble.innerText = question;
             container.appendChild(userBubble);
-            
+
             input.value = '';
             document.getElementById('loading').style.display = 'block';
             container.scrollTop = container.scrollHeight;
@@ -418,14 +467,24 @@
 
                 const resultDiv = document.createElement('div');
                 resultDiv.className = 'results-section';
-                
+
                 let contentHtml = '';
                 if (askData.explanation) {
                     contentHtml += `<div class="explanation-box"><strong>Insight:</strong><br>${askData.explanation.replace(/\n/g, '<br>')}</div>`;
                 }
                 contentHtml += `<div class="sql-box">${askData.sql}</div>`;
                 contentHtml += `<div class="table-container" id="table-${askData.request_id}">Running query...</div>`;
-                
+
+                // Add Feedback Box
+                contentHtml += `
+                    <div class="feedback-box" id="feedback-row-${askData.request_id}">
+                        <span>Was this helpful?</span>
+                        <button onclick="submitFeedback('${askData.request_id}', true)" class="btn-feedback correct">👍 Yes</button>
+                        <button onclick="submitFeedback('${askData.request_id}', false)" class="btn-feedback incorrect">👎 No</button>
+                        <span id="status-${askData.request_id}" class="feedback-status"></span>
+                    </div>
+                `;
+
                 resultDiv.innerHTML = contentHtml;
                 container.appendChild(resultDiv);
                 container.scrollTop = container.scrollHeight;
@@ -438,7 +497,7 @@
 
                 const runData = await runRes.json();
                 const tableTarget = document.getElementById(`table-${askData.request_id}`);
-                
+
                 if (!runRes.ok) {
                     tableTarget.innerHTML = `<p style="color:#ef4444">Error: ${runData.detail}</p>`;
                 } else {
@@ -472,6 +531,39 @@
             });
             html += '</tbody></table></div>';
             targetElement.innerHTML = html;
+        }
+
+        async function submitFeedback(requestId, isCorrect) {
+            const token = localStorage.getItem('access_token');
+            const statusEl = document.getElementById(`status-${requestId}`);
+            const feedbackRow = document.getElementById(`feedback-row-${requestId}`);
+
+            try {
+                const res = await fetch('/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        request_id: requestId,
+                        is_correct: isCorrect
+                    })
+                });
+
+                const data = await res.json();
+
+                // Hide buttons, show status
+                feedbackRow.querySelectorAll('.btn-feedback').forEach(btn => btn.style.display = 'none');
+                feedbackRow.querySelector('span').style.display = 'none';
+
+                statusEl.style.display = 'block';
+                statusEl.innerText = isCorrect ? '✓ Thank you! This helps improve the AI.' : '✖ Noted. We will use this to improve.';
+                statusEl.style.color = isCorrect ? '#4ade80' : '#ef4444';
+
+            } catch (err) {
+                console.error('Feedback error:', err);
+            }
         }
 
         window.onload = loadUser;

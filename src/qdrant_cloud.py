@@ -23,7 +23,7 @@ class MyQdrantVectorStore(Qdrant_VectorStore):
         qdrant_url = cfg.get("qdrant_url")
         api_key = cfg.get("qdrant_api_key")
 
-        print(">>> Qdrant URL in use:", qdrant_url)
+        print(">Qrant URL in use:", qdrant_url)
 
         self._client = QdrantClient(
             url=qdrant_url,
@@ -65,8 +65,6 @@ class MyQdrantVectorStore(Qdrant_VectorStore):
                         distance=Distance.COSINE
                     ),
                 )
-
-    # - Custom embedding generation method ---
     def generate_embedding(self, text: str, **kwargs) -> List[float]:
         emb = self.embedder.encode(text)
         return np.asarray(emb).tolist()
